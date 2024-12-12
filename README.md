@@ -6,7 +6,6 @@ As of March 2024 Stack Overflow has over 23 million registered users and has rec
 
 
 For a dataset of 10,000 question-answer pairs, we propose to:
-
-** Perform document preprocessing
-** Compare different LLM approaches (such as Gemini) to predict tags
-** Implement, in the form of an API, a tag suggestion system for the site, ensuring that the questions are well-referenced and can be easily retrieved.
+* Perform document preprocessing
+* Compare different LLM approaches (such as Gemini) to predict tags
+* Implement, in the form of an API, a tag suggestion system for the site, ensuring that the questions are well-referenced and can be easily retrieved.
