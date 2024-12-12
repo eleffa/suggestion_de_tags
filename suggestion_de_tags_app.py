@@ -21,7 +21,7 @@ page = st.sidebar.selectbox(
 )
 
 
-@st.cache
+@st.cache_data
 def load_data_from_github(url: str):
     """
     Load data from a CSV file hosted on GitHub.
@@ -45,7 +45,7 @@ df = load_data_from_github("https://raw.githubusercontent.com/eleffa/suggestion_
 
 # Accueil
 if page == "Accueil":
-    st.title("Welcome to MuchMore Project! 👋")
+    st.title("Bienvenue sur Système de suggestion de tags! 👋")
     st.sidebar.success("Vous êtes sur la page d'accueil.")
 
     st.markdown(
