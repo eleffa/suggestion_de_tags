@@ -63,16 +63,16 @@ if page == "Accueil":
 
 # Dashboard
 elif page == "Dashboard":
-    st.title("Système de suggestion de tags 📊")
+    st.title("Système de suggestion de tags")
     st.sidebar.success("Vous êtes sur la page Dashboard.")
 
     # Section 1 : Vue d'ensemble
     st.header("Vue d'ensemble")
     st.write("Résumé des données")
     # Exemple : ajouter des statistiques clés
-    st.metric("Total Abstracts", 7823)
-    st.metric("Nombre de Classes", 39)
-
+    st.metric("Nombre Total de Questions", 46500)
+    st.metric("Nombre de colonnes", 11)
+    
     # Ajouter un diagramme de distribution des classes (importer une image générée)
     #st.image("https://raw.githubusercontent.com/eleffa/MuchMore-project/main/dashboard/distribution_categories.png",
     #caption="Distribution des Classes", use_column_width=True)
@@ -95,7 +95,7 @@ elif page == "Dashboard":
 
 # Exploration Interactive
 elif page == "système de suggestion de tags":
-  st.title("système de suggestion de tags 👋")
+  st.title("système de suggestion de tags ")
     
 
    
