@@ -45,7 +45,7 @@ df = load_data_from_github("https://raw.githubusercontent.com/eleffa/suggestion_
 
 # Accueil
 if page == "Accueil":
-    st.title("Bienvenue sur Système de suggestion de tags! 👋")
+    st.title("Bienvenue sur le projet! 👋")
     st.sidebar.success("Vous êtes sur la page d'accueil.")
 
     st.markdown(
