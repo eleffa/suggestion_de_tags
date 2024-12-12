@@ -45,12 +45,12 @@ df = load_data_from_github("https://raw.githubusercontent.com/eleffa/suggestion_
 
 # Accueil
 if page == "Accueil":
-    st.title("Bienvenue sur le projet! 👋")
+    st.title("Welcome! 👋")
     st.sidebar.success("Vous êtes sur la page d'accueil.")
 
     st.markdown(
         """
-        ### Système de suggestion de tags 
+        ### Tag Suggestion System
         Stack Overflow is a question-and-answer website for computer programmers. It was created in 2008. 
         It features questions and answers on certain computer programming topics. As of March 2024 Stack 
         Overflow has over 23 million registered users and has received over 24 million questions and 
