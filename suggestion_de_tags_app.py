@@ -41,7 +41,7 @@ def load_data_from_github(url: str):
 
 
 
-df = load_data_from_github("https://raw.githubusercontent.com/eleffa/MuchMore-project/main/QueryResults.csv")
+df = load_data_from_github("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/queryResult02.csv")
 
 # Accueil
 if page == "Accueil":
