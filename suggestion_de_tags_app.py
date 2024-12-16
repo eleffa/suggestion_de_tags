@@ -119,6 +119,39 @@ elif page == "Tags":
     if question_selected:
         true_tags = random_questions.loc[random_questions['Title'] == question_selected, 'Tags'].values[0]
         st.write("Tags réels pour la question sélectionnée :", true_tags)
+        # Interface pour prédire les tags
+        if st.button("Prédire les tags"):
+            # Utiliser facebook/bart-large-mnli
+            bart_model = pipeline("text-classification", model="facebook/bart-large-mnli", multi_label=True)
+    	    prompt = f"Suggest relevant tags for the following programming question: {question_selected}"
+            bart_pred = bart_model(question_selected)
+            bart_tags = [label['label'] for label in bart_pred if label['score'] > 0.5]
+            st.write("Tags prédits avec BART :", bart_tags)
+    
+            # Utiliser google/flan-t5-base
+            flan_model = pipeline("text2text-generation", model="google/flan-t5-base")
+            flan_prompt = f"Suggest relevant tags for the following question: {question_selected}. Provide tags separated by commas."
+            flan_response = flan_model(flan_prompt, max_length=50)
+            flan_tags = flan_response[0]['generated_text'].split(',')
+            flan_tags = [tag.strip() for tag in flan_tags]
+            st.write("Tags prédits avec FLAN-T5 :", flan_tags)
+    
+            # Évaluation des résultats
+            # Préparer les vrais tags sous forme de liste
+            #true_tags_list = [tag.strip() for tag in true_tags.strip('<>').split('><')]
+            true_tags_list = true_tags
+    	    # Évaluation pour BART
+            bart_evaluation = classification_report([true_tags_list], [bart_tags], output_dict=True)
+            st.write("Évaluation pour BART :")
+            st.json(bart_evaluation)
+    
+            # Évaluation pour FLAN-T5
+            flan_evaluation = classification_report([true_tags_list], [flan_tags], output_dict=True)
+            st.write("Évaluation pour FLAN-T5 :")
+            st.json(flan_evaluation)
+    else:
+          st.write("Veuillez sélectionner une question pour continuer.")    
+        
         
 
 
