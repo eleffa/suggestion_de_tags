@@ -72,24 +72,39 @@ elif page == "Dashboard":
     # Exemple : ajouter des statistiques clés
     st.metric("Nombre Total de Questions", 46500)
     st.metric("Nombre de colonnes", 11)
+    st.metric("Longueurs de la question la plus longue", 763)
+    st.metric("Longueurs de la question la plus courte", 0)
     
     # Ajouter un diagramme de distribution des classes (importer une image générée)
     #st.image("https://raw.githubusercontent.com/eleffa/MuchMore-project/main/dashboard/distribution_categories.png",
     #caption="Distribution des Classes", use_column_width=True)
 
     # Section 2 : Analyse exploratoire
-    #st.header("Analyse exploratoire")
-    #st.subheader("Histogramme des longueurs")
-    #st.image("https://raw.githubusercontent.com/eleffa/MuchMore-project/main/dashboard/distribution_longueur.png", 
-    #         caption="Distribution des longueurs des abstracts")
+    st.header("Analyse exploratoire")
+    st.subheader("Statistiques générales")
+    st.dataframe(df[['Score','ViewCount','AnswerCount','CommentCount','FavoriteCount']].describe())
+        
+    st.subheader("Distribution des tags")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/distribution_des_tags.png", caption="distribution des tags")
     
+    st.subheader("Questions avec les scores les plus élevés")
+    popular_questions = df.sort_values(by='Score', ascending=False).head(5)
+    st.dataframe(popular_questions[['Title', 'Score', 'ViewCount']])
+    
+    st.subheader("Tags les plus fréquents")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/tags_les_plus_frequents.png", caption="Tags les plus fréquents")
+    
+    st.subheader("Corrélations Entre les Variables Numériques")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/correlation_matrix.png", caption="correlation matrix")
+    
+    st.subheader("Évolution du Nombre de Questions Dans le Temps")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/evolution_data.png", caption="évolution dans le temps")
+    
+    st.subheader("Nuage de mots")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/nuage_de_mots.png", caption="Nuage de mots")
 
-    #st.subheader("Nuage de mots")
-    #st.image("https://raw.githubusercontent.com/eleffa/MuchMore-project/main/dashboard/nuage_de_mots.png", caption="Nuage de mots")
-
-    #st.subheader("Heatmap de similarité")
-    #st.image("https://raw.githubusercontent.com/eleffa/MuchMore-project/main/dashboard/heatmap_similarite.png", caption="Similarité entre catégories")
-
+    st.subheader("Histogramme des longueurs")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/histogramme.png", caption="Distribution des longueurs des questions")
     
         
 
