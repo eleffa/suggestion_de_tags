@@ -113,7 +113,12 @@ elif page == "Tags":
     st.sidebar.success("Vous êtes sur la page système de suggestion de tags.")    
 
     random_questions = df.sample(10, random_state=42)  # Sélection de 10 questions aléatoires
-    question_selected = st.selectbox("Sélectionnez une question :", random_questions['Title'].tolist()) 
+    question_selected = st.selectbox("Sélectionnez une question :", random_questions['Title'].tolist())
+
+    # 2. Obtenir les vrais tags pour la question sélectionnée
+    if question_selected:
+        true_tags = random_questions.loc[random_questions['Title'] == question_selected, 'Tags'].values[0]
+        st.write("Tags réels pour la question sélectionnée :", true_tags)
         
 
 
