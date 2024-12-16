@@ -85,26 +85,26 @@ elif page == "Dashboard":
     st.dataframe(df[['Score','ViewCount','AnswerCount','CommentCount','FavoriteCount']].describe())
         
     st.subheader("Distribution des tags")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/distribution_des_tags.png", caption="distribution des tags")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/distribution_des_tags.png", caption="distribution des tags")
     
     st.subheader("Questions avec les scores les plus élevés")
     popular_questions = df.sort_values(by='Score', ascending=False).head(5)
     st.dataframe(popular_questions[['Title', 'Score', 'ViewCount']])
     
     st.subheader("Tags les plus fréquents")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/tags_les_plus_frequents.png", caption="Tags les plus fréquents")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/tags_les_plus_frequents.png", caption="Tags les plus fréquents")
     
     st.subheader("Corrélations Entre les Variables Numériques")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/correlation_matrix.png", caption="correlation matrix")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/correlation_matrix.png", caption="correlation matrix")
     
     st.subheader("Évolution du Nombre de Questions Dans le Temps")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/evolution_data.png", caption="évolution dans le temps")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/evolution_data.png", caption="évolution dans le temps")
     
     st.subheader("Nuage de mots")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/nuage_de_mots.png", caption="Nuage de mots")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/nuage_de_mots.png", caption="Nuage de mots")
 
     st.subheader("Histogramme des longueurs")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tag/main/dashboard/histogramme.png", caption="Distribution des longueurs des questions")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/histogramme.png", caption="Distribution des longueurs des questions")
     
         
 
