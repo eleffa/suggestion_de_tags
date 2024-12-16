@@ -42,7 +42,7 @@ def load_data_from_github(url: str):
 
 
 
-df = load_data_from_github("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/queryResult02.csv")
+df = load_data_from_github("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/queryResult02_clean.csv")
 
 # Accueil
 if page == "Accueil":
@@ -141,7 +141,8 @@ elif page == "système de suggestion de tags":
           # Évaluation des résultats
           # Préparer les vrais tags sous forme de liste
           #true_tags_list = [tag.strip() for tag in true_tags.strip('<>').split('><')]
-          # Évaluation pour BART
+          true_tags_list = true_tags
+	  # Évaluation pour BART
           bart_evaluation = classification_report([true_tags_list], [bart_tags], output_dict=True)
           st.write("Évaluation pour BART :")
           st.json(bart_evaluation)
