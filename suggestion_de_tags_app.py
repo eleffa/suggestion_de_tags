@@ -18,7 +18,7 @@ st.set_page_config(
 # Ajout de la barre de navigation
 page = st.sidebar.selectbox(
     "Navigation",
-    ["Accueil", "Dashboard", "Système de suggestion de tags"]
+    ["Accueil", "Dashboard", "Tags"]
 )
 
 
@@ -108,7 +108,7 @@ elif page == "Dashboard":
     st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/histogramme.png", caption="Distribution des longueurs des questions")
 
 # Exploration Interactive
-elif page == "système de suggestion de tags":
+elif page == "Tags":
     st.title("Système de Suggestion de Tags")
     st.sidebar.success("Vous êtes sur la page système de suggestion de tags.")    
 
