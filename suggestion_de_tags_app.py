@@ -85,14 +85,14 @@ elif page == "Dashboard":
     st.dataframe(df[['Score','ViewCount','AnswerCount','CommentCount','FavoriteCount']].describe())
         
     st.subheader("Distribution des tags")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/distribution_des_tags.png", caption="distribution des tags")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/distribution_des_tags.jpg", caption="distribution des tags")
     
     st.subheader("Questions avec les scores les plus élevés")
     popular_questions = df.sort_values(by='Score', ascending=False).head(5)
     st.dataframe(popular_questions[['Title', 'Score', 'ViewCount']])
     
     st.subheader("Tags les plus fréquents")
-    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/tags_les_plus_frequents.png", caption="Tags les plus fréquents")
+    st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/tags_les_plus_frequents.jpg", caption="Tags les plus fréquents")
     
     st.subheader("Corrélations Entre les Variables Numériques")
     st.image("https://raw.githubusercontent.com/eleffa/suggestion_de_tags/main/dashboard/correlation_matrix.png", caption="correlation matrix")
