@@ -123,7 +123,7 @@ elif page == "Tags":
         if st.button("Prédire les tags"):
             # Utiliser facebook/bart-large-mnli
             bart_model = pipeline("text-classification", model="facebook/bart-large-mnli", multi_label=True)
-    	    prompt = f"Suggest relevant tags for the following programming question: {question_selected}"
+    	    #prompt = f"Suggest relevant tags for the following programming question: {question_selected}"
             bart_pred = bart_model(question_selected)
             bart_tags = [label['label'] for label in bart_pred if label['score'] > 0.5]
             st.write("Tags prédits avec BART :", bart_tags)
