@@ -112,9 +112,9 @@ elif page == "Dashboard":
 # Exploration Interactive
 elif page == "système de suggestion de tags":
   st.title("Système de Suggestion de Tags")
-
+  st.write("toto")
   # 1. Charger un sous-ensemble de questions du dataframe
-  random_questions = df.sample(10, random_state=42)  # Sélection de 10 questions aléatoires
-  question_selected = st.selectbox("Sélectionnez une question :", random_questions['Title'].tolist()) 
+  #random_questions = df.sample(10, random_state=42)  # Sélection de 10 questions aléatoires
+  #question_selected = st.selectbox("Sélectionnez une question :", random_questions['Title'].tolist()) 
 
    
