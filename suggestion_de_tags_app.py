@@ -119,8 +119,8 @@ elif page == "Tags":
         true_tags = random_questions.loc[random_questions['Title'] == question_selected, 'Tags'].values[0]
         body_0 = random_questions.loc[random_questions['Title'] == question_selected, 'Body'].values[0]
 
-        st.write("Titre", question_selected)
-        st.write("Question", body_0)
+        st.write("Titre :", question_selected)
+        st.write("Question :", body_0)
         st.write("Tags réels pour la question sélectionnée :", true_tags)
         
         # Interface pour prédire les tags
