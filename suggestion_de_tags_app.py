@@ -6,7 +6,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from transformers import pipeline
-#from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report
 
 # Configuration de la page principale
 st.set_page_config(
