@@ -117,9 +117,12 @@ elif page == "Tags":
     # 2. Obtenir les vrais tags pour la question sélectionnée
     if question_selected:
         true_tags = random_questions.loc[random_questions['Title'] == question_selected, 'Tags'].values[0]
-        body_0 = random_questions.loc[random_questions['Title'] == question_selected, 'Body'].values
+        body_0 = random_questions.loc[random_questions['Title'] == question_selected, 'Body'].values[0]
+
+        st.write("Titre", question_selected)
+        st.write("Question", body_0)
         st.write("Tags réels pour la question sélectionnée :", true_tags)
-        st.write(body_0)
+        
         # Interface pour prédire les tags
         #if st.button("Prédire les tags"):
             # Utiliser facebook/bart-large-mnli
